@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Privatebin by PrivateBin</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Privatebin</h1>
+          <h2>A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/PrivateBin/PrivateBin/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/PrivateBin/PrivateBin/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/PrivateBin/PrivateBin" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="privatebin-022" class="anchor" href="#privatebin-022" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PrivateBin 0.22</h1>
+
+<p><a href="https://travis-ci.org/PrivateBin/PrivateBin"><img src="https://travis-ci.org/PrivateBin/PrivateBin.svg?branch=master" alt="Build Status"></a> <a href="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/build-status/master"><img src="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/badges/build.png?b=master" alt="Build Status"></a><br>
+<a href="https://www.codacy.com/app/PrivateBin/PrivateBin"><img src="https://api.codacy.com/project/badge/Grade/094500f62abf4c9aa0c8a8a4520e4789" alt="Codacy Badge"></a>
+<a href="https://codeclimate.com/github/PrivateBin/PrivateBin"><img src="https://codeclimate.com/github/PrivateBin/PrivateBin/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/?branch=master"><img src="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://insight.sensiolabs.com/projects/57c9e74e-c6f9-4de6-a876-df66ec2ea1ff"><img src="https://insight.sensiolabs.com/projects/57c9e74e-c6f9-4de6-a876-df66ec2ea1ff/mini.png" alt="SensioLabsInsight"></a><br>
+<a href="https://www.codacy.com/app/PrivateBin/PrivateBin"><img src="https://api.codacy.com/project/badge/Coverage/094500f62abf4c9aa0c8a8a4520e4789" alt="Codacy Badge"></a>
+<a href="https://codeclimate.com/github/PrivateBin/PrivateBin/coverage"><img src="https://codeclimate.com/github/PrivateBin/PrivateBin/badges/coverage.svg" alt="Test Coverage"></a> <a href="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/?branch=master"><img src="https://scrutinizer-ci.com/g/PrivateBin/PrivateBin/badges/coverage.png?b=master" alt="Code Coverage"></a></p>
+
+<p><strong>PrivateBin</strong> is a minimalist, open source online pastebin where the server has
+zero knowledge of pasted data.</p>
+
+<p>Data is encrypted/decrypted in the browser using 256bit AES in <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">Galois Counter mode</a>.</p>
+
+<p>This is a fork of ZeroBin, originally developed by
+<a href="https://github.com/sebsauvage/ZeroBin">Sébastien Sauvage</a>. It was refactored
+to allow easier and cleaner extensions and has now much more features than the
+original. It is however still fully compatible to the original ZeroBin 0.19
+data storage scheme. Therefore such installations can be upgraded to this fork
+without loosing any data.</p>
+
+<p><img src="https://cdn.rawgit.com/PrivateBin/PrivateBin/master/img/icon.svg" height="200"></p>
+
+<h2>
+<a id="what-privatebin-provides" class="anchor" href="#what-privatebin-provides" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What PrivateBin provides</h2>
+
+<ul>
+<li><p>As a server administrator you don't have to worry if your users post content
+that is considered illegal in your country. You have no knowledge of any
+of the pastes content. If requested or enforced, you can delete any paste from
+your system.</p></li>
+<li><p>Pastebin-like system to store text documents, code samples, etc.</p></li>
+<li><p>Encryption of data sent to server.</p></li>
+<li><p>Possibility to set a password which is required to read the paste. It further
+protects a paste and prevents people stumbling upon your paste's link
+from being able to read it without the password.</p></li>
+</ul>
+
+<h2>
+<a id="what-it-doesnt-provide" class="anchor" href="#what-it-doesnt-provide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What it doesn't provide</h2>
+
+<ul>
+<li><p>As a user you have to trust the server administrator, your internet provider
+and any country the traffic passes not to inject any malicious javascript code.
+Ideally, the PrivateBin installation used should provide HTTPS, secured by
+<a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HSTS</a> and
+<a href="https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning">HPKP</a> using a
+certificate either validated by a trusted third party (check the certificate
+when first using a new PrivateBin instance) or self-signed by the server
+operator, validated using a
+<a href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">DNSSEC</a>
+protected
+<a href="https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities">DANE</a>
+record.</p></li>
+<li><p>The "key" used to encrypt the paste is part of the URL. If you publicly post
+the URL of a paste that is not password-protected, everybody can read it.
+Use a password if you want your paste to be private. In this case make sure to
+use a strong password and do only share it privately and end-to-end-encrypted.</p></li>
+<li><p>A server admin might be forced to hand over access logs to the authorities.
+PrivateBin encrypts your text and the discussion contents, but who accessed it
+first might still be disclosed via such access logs.</p></li>
+<li><p>In case of a server breach your data is secure as it is only stored encrypted
+on the server. However the server could be misused or the server admin could
+be legally forced into sending malicious JavaScript to all web users, which
+grabs the decryption key and send it to the server when a user accesses a
+PrivateBin.<br>
+Therefore do not access any PrivateBin instance if you think it has been
+compromised. As long as no user accesses this instance with a previously
+generated URL, the content can''t be decrypted.</p></li>
+</ul>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+
+<p>Some features are optional and can be enabled or disabled in the <a href="https://github.com/PrivateBin/PrivateBin/wiki/Configuration">configuration
+file</a>:</p>
+
+<ul>
+<li><p>Password protection</p></li>
+<li><p>Discussions</p></li>
+<li><p>Expiration times, including a "forever" and "burn after reading" option</p></li>
+<li><p>Markdown format support for HTML formatted pastes</p></li>
+<li><p>Syntax highlighting for source code using prettify.js, including 4 prettify
+themes</p></li>
+<li><p>File upload support, images get displayed (disabled by default, possibility
+to adjust size limit)</p></li>
+<li><p>Templates: By default there is a bootstrap CSS and a "classic ZeroBin" theme
+and it is easy to adapt these to your own websites layout or create your own.</p></li>
+<li><p>Translation system and automatic browser language detection (if enabled in
+browser)</p></li>
+<li><p>Language selection (disabled by default, as it uses a session cookie)</p></li>
+</ul>
+
+<h2>
+<a id="further-resources" class="anchor" href="#further-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Further resources</h2>
+
+<ul>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Installation">Installation guide</a></p></li>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Upgrading-from-ZeroBin-0.19-Alpha">Upgrading from ZeroBin 0.19 Alpha</a></p></li>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Configuration">Configuration guide</a></p></li>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Templates">Templates</a></p></li>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Translation">Translation guide</a></p></li>
+<li><p><a href="https://github.com/PrivateBin/PrivateBin/wiki/Development">Developer guide</a></p></li>
+</ul>
+
+<p>Run into any issues? Have ideas for further developments? Please
+<a href="https://github.com/PrivateBin/PrivateBin/issues">report</a> them!</p>
+        </section>
+
+        <footer>
+          Privatebin is maintained by <a href="https://github.com/PrivateBin">PrivateBin</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
